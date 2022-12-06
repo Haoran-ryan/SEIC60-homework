@@ -1,0 +1,23 @@
+ 437  mkdir galaxy_far_far_away
+  438  mkdir death_star
+  439  cd death_star
+  440  touch darth_vader.txt pricess_leia.txt storm_tropper.txt
+  441  cd ..
+  442  ls
+  443  cd galaxy_far_far_away
+  444  mkdir tatooine
+  445  touch luke.txt ben_kenobi.txt
+  446  cd ..
+  447  cd tatooine
+  448  cd galaxy_far_far_away
+  449  ls
+  450  cd tatooine
+  451  touch luke.txt ben_kenobi.txt
+  452  mkdir millenium_falcon
+  453  cd millenium_falcon
+  454  touch han_solo.txt chewbaca.txt
+  455  history
+  456  cd ../
+  457  cd ..
+  458  ls
+  

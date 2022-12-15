@@ -1,18 +1,21 @@
 const body = document.body
 
 // callback function for toggle
-const flapClass =function (){
-    body.classList.toggle("flap");
-}
+// const flapClass =function (){
+//     body.classList.toggle("flap");
+// }
+
+// set the duck properties
+
 
 // function to check the ducks left
 const checkForWinner = function () {
     const ducks = document.querySelectorAll('.duck');
     const duckCount = ducks.length;
     if (duckCount > 0) {
-        console.log(`There are ${duckCount} ducks left`);
+        alert(`There are ${duckCount} ducks left`);
 } else{
-    console.log("YOU WIN!");
+    alert("YOU WIN!");
     }
 }
 
@@ -22,21 +25,29 @@ const createDuck = function(){
     newDiv.classList.add("duck");
     body.append(newDiv);
 
+    const flapClass =function (){
+        newDiv.classList.toggle("flap");
+    }
+
     const flap = setInterval(flapClass, 250);
 
     //target properties in the class 'duck'
-    const duckClass = document.querySelector(".duck");
+    // const duckClass = document.querySelector(".duck");
+    // duckClass.style.top = `${Math.random() * window.innerWidth}px`;
+    // duckClass.style.left = `${Math.random() * window.innerHeight}px`;
 
-    duckClass.style.top = `${Math.random() * window.innerWidth}px`;
-    duckClass.style.left = `${Math.random() * window.innerHeight}px`;
-
+    const duckStyle = function (){
+        newDiv.style.left = `${Math.random() * window.innerWidth}px`;
+        newDiv.style.top = `${Math.random() * window.innerHeight}px`;
+    }
+    setInterval(duckStyle, 1000);
     //event listener
-    body.addEventListener("click", function(event) {
+    newDiv.addEventListener("click", function(event) {
         let duck = event.target
         if (duck.className === "duck") {
-            duckClass.classList.add("shot");
+            newDiv.classList.add("shot");
             const removeDuck = function (){
-                duckClass.classList.remove("duck")
+                newDiv.classList.remove("duck")
             }
 
             setInterval(removeDuck, 100);
@@ -50,9 +61,9 @@ const createDuck = function(){
 //call the main function
 createDuck();
 
-// for (let i=0; i < 5; i++){
-//     createDuck()
-// }
+for (let i=0; i < 5; i++){
+    createDuck()
+}
 // // ---------------------------- PART 1 ---------------------------------
 
 // 1. Create a function called `createDuck`. Inside this function:

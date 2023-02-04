@@ -1,15 +1,16 @@
 import React,{Component} from "react";
 
-class Board extends Component{
+class Square extends Component{
     render(){
+        function handleClick(){
+            console.log('clicked')
+        }
         return(
-            <div className="board-row">
-                <button className="square">1</button>
-                <button className="square">2</button>
-                <button className="square">3</button>
-            </div>
+            <>
+                <button className="square" onClick={handleClick}>{ this.props.value }</button>
+            </>
         )
     }
 }
 
-export default Board;
+export default Square;

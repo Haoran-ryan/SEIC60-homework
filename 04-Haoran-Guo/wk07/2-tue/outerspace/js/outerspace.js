@@ -32,7 +32,7 @@ $('.spacemen').on('submit', function(event){
             }
         }
         
-        //create a p tag and pass the text to it 
+        //create a p tag and pass the text to it
         for (const property in record){
             $('.space').append(`<p>There are ${record[property]} flying in <strong>${property}</strong>. </p><br>`)
         }
